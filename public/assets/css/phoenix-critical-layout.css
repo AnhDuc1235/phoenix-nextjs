@@ -1,0 +1,44 @@
+/**
+ * Inlined in <head> — must apply before first paint (bundled CSS loads too late).
+ * See theme.css: .navbar-vertical { width: 100vw } → @992px width 15.875rem + transition.
+ */
+
+@media (min-width: 992px) {
+  html:not(.phoenix-layout-ready) .navbar-vertical.navbar-expand-lg {
+    width: 15.875rem !important;
+    max-width: 15.875rem !important;
+    transition: none !important;
+  }
+
+  html:not(.phoenix-layout-ready).navbar-vertical-collapsed .navbar-vertical.navbar-expand-lg {
+    width: 4rem !important;
+    max-width: 4rem !important;
+  }
+
+  html:not(.phoenix-layout-ready):not(.navbar-vertical-collapsed)
+    .navbar-vertical.navbar-expand-lg
+    ~ .navbar-top
+    ~ .content {
+    margin-left: 15.875rem !important;
+    transition: none !important;
+  }
+
+  html:not(.phoenix-layout-ready).navbar-vertical-collapsed
+    .navbar-vertical.navbar-expand-lg
+    + .navbar.navbar-top
+    ~ .content {
+    margin-left: 4rem !important;
+    transition: none !important;
+  }
+}
+
+html:not(.phoenix-layout-ready),
+html:not(.phoenix-layout-ready) body {
+  overflow-x: hidden;
+  background-color: #e3e6ed;
+}
+
+html:not(.phoenix-layout-ready)[data-bs-theme='dark'],
+html:not(.phoenix-layout-ready)[data-bs-theme='dark'] body {
+  background-color: #0f111a;
+}

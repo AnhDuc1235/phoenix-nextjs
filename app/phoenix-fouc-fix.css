@@ -1,0 +1,16 @@
+/**
+ * Backup layout guards (primary fix: /assets/css/phoenix-critical-layout.css in <head>).
+ */
+
+html.phoenix-layout-ready .navbar-vertical.navbar-expand-lg {
+  transition: width 0.2s ease;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.main {
+  min-height: 100vh;
+}

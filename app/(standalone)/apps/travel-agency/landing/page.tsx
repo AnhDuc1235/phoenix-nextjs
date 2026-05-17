@@ -1,0 +1,16 @@
+import type { Metadata } from 'next';
+import Landing from './_components/Landing';
+import ExtraScripts from '@/components/ui/extra-scripts';
+
+export const metadata: Metadata = {
+  title: "Phoenix",
+};
+
+export default function Page() {
+  return (
+    <>
+      <link href="/vendors/swiper/swiper-bundle.min.css" rel="stylesheet" />      <ExtraScripts scripts={["/vendors/isotope-layout/isotope.pkgd.min.js","/vendors/imagesloaded/imagesloaded.pkgd.min.js","/vendors/isotope-packery/packery-mode.pkgd.min.js","/vendors/bigpicture/BigPicture.js","/vendors/typed.js/typed.umd.js","/vendors/swiper/swiper-bundle.min.js"]} />
+      <Landing />
+    </>
+  );
+}
